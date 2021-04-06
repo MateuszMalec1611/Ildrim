@@ -20,3 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: $font-color;
+  border: none;
+  border-radius: .5rem;
+  text-transform: uppercase;
+  outline: none;
+}

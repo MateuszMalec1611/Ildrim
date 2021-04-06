@@ -2,4 +2,5 @@
 import './styles/index.scss'
 
 // JS files
+import './js/navigation'
 

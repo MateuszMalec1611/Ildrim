@@ -1,0 +1,40 @@
+.ham-ico {
+    padding: 1.6rem 1rem;
+    background-color: transparent;
+    
+    &__bars {
+        position: relative;
+        @include hamburger-bars;
+        transition: background-color .1s;
+
+        &::before {
+            top: .7rem;
+            @include hamburger-bars;
+            @include hamburger;
+        }
+        &::after {
+            bottom: .7rem;
+            @include hamburger-bars;
+            @include hamburger;
+          
+        }
+
+        &--active {
+            background-color: transparent;
+
+            &::before {
+                content: '';
+                top: 0;
+                transform: translateX(-50%) rotate(-45deg);
+            }
+
+            &::after {
+                content: '';
+                bottom: 0;
+                transform: translateX(-50%) rotate(45deg);
+                
+            }
+        }
+    }
+
+}

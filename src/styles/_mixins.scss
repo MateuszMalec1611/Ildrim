@@ -1,0 +1,22 @@
+@mixin hamburger-bars {
+    height: .2rem;
+    width: 2.6rem;
+    background-color: white;
+}
+
+@mixin hamburger {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform .3s;
+}
+
+@mixin nav-under-line {
+    position: absolute;
+    content: '';
+    bottom: .5rem;
+    left: 50%;
+    width: 6rem;
+    height: .2rem;
+}
