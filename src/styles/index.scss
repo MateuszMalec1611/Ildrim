@@ -2,4 +2,8 @@
   font-family: 'Inter';
   src: url('../fonts/Inter.ttf');
 }
-@import '_test';
+@import '_variables';
+@import '_responsive';
+@import '_mixins';
+@import '_global';
+
