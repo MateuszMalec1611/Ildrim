@@ -1,0 +1,100 @@
+.about-us {
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media-tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row: 1fr;
+            gap: 0 4rem;
+            min-height: 500px;
+        }
+
+        &-img-wrapper {
+            overflow: hidden;
+            width: calc(100% + 4rem);
+            height: 30rem;
+
+            @include media-mobile {
+                height: 39rem;
+            }
+
+            @include media-tablet {
+                width: 45%;
+                position: absolute;
+                left: 0;
+                height: 50rem;
+            }
+        }
+
+        &-img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-height: 100%;
+
+            @include media-mobile {
+                transform: unset;
+            }
+
+            @include media-tablet {
+                height: 45rem;
+                object-fit: cover;
+                border-radius: 0 10px 10px 0;
+            }
+            
+            @include media-extra-large-desktop {
+                height: unset;
+            }
+        }
+
+        &-text-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-self: start;
+            grid-column: 2;
+
+            @include media-desktop {
+                align-self: center;
+            }
+        }
+
+        &-text {
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 60rem;
+            text-align: left;
+            font-size: $sizeXS;
+
+            @include media-tablet {
+                margin-top: 0;
+                align-self: center;
+                max-width: 60rem;
+            }
+
+            @include media-desktop {
+                font-size: $extraSize;
+            }
+        }
+    }
+
+
+    &__btn {
+        margin-top: 2rem;
+        padding: 1.4rem 3rem;
+        align-self: flex-start;
+        transition: transform .3s;
+
+        @include media-desktop {
+            display: none;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
