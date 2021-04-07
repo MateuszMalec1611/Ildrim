@@ -1,12 +1,11 @@
 .swiper-container {
-    height: 75%;
     top: 0;
+    height: 75%;
 }
 
 .swiper-slide {
     margin-top: 2rem;
     padding: 0 2rem;
-    height: 100%;
     line-height: 2.2rem;
     text-align: center;
     font-size: 1.4rem;
@@ -14,5 +13,15 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    top: 310px !important;
+    top: 31rem !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    position: relative;
+    top: 12px;
+    background-color: $font-color;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: $gold-color;
 }
