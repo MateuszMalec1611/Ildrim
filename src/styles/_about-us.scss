@@ -45,26 +45,44 @@
                 object-fit: cover;
                 border-radius: 0 10px 10px 0;
             }
-            
+
             @include media-extra-large-desktop {
                 height: unset;
             }
         }
 
         &-text-container {
-            position: relative;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
             display: flex;
             flex-direction: column;
             align-self: start;
             grid-column: 2;
+            width: 100%;
+            height: 36rem;
+            overflow-y: scroll;
 
-            @include media-desktop {
-                align-self: center;
+            @include media-tablet {
+                padding: 1rem;
+                margin-top: 3rem;
+                height: 40rem;
+                border-radius: 2rem 0 0 2rem;
+                box-shadow: -7px 7px 30px black;
             }
+
+            &::-webkit-scrollbar {
+                width: 1rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $font-color;
+                outline: 1px solid slategrey;
+            }
+
         }
 
         &-text {
-            margin-top: 2rem;
+            padding-right: .7rem;
             width: 100%;
             max-width: 60rem;
             text-align: left;
@@ -81,7 +99,6 @@
             }
         }
     }
-
 
     &__btn {
         margin-top: 2rem;
