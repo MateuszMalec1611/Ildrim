@@ -1,0 +1,33 @@
+.container {
+    margin: 0 auto;
+    padding: 0 2em;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.section-header {
+    position: relative;
+    display: flex;
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+    justify-content: center;
+   
+    font-size: $sizeM;
+    text-transform: uppercase;
+    text-align: center;
+    @include media-extra-large-desktop {
+        font-size: $sizeL;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        bottom: -1rem;
+        width: 7rem;
+        height: .3rem;
+        background-color: $gold-color;
+        @include media-extra-large-desktop {
+            width: 9rem;
+        }
+    }
+}

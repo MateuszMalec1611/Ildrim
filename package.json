@@ -54,6 +54,6 @@
     "aos": "^2.3.4",
     "lozad": "^1.16.0",
     "robotstxt-webpack-plugin": "^7.0.0",
-    "swiper": "^6.4.1"
+    "swiper": "^6.5.4"
   }
 }
