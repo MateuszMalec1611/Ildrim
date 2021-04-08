@@ -31,6 +31,38 @@
             z-index: 10;
         }
 
+        &-read-more-box {
+            display: flex;
+            position: absolute;
+            bottom: 4rem;
+            left: 13.5rem;
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: -.5rem;
+                left: 0;
+                width: 100%;
+                height: .2rem;
+                background-color: $gold-color;
+                transition: width .3s ,background-color .4s;
+            }
+
+            &-text {
+                margin-right: 1rem;
+                font-size: $sizeForAdress;
+            }
+
+            &-arrow {
+                display: inline-block;
+                margin-top: .1rem;
+                width: 2.5rem;
+                filter: invert(27%) saturate(2878%) hue-rotate(346deg)brightness(100);
+                transition: margin .3s;
+            }
+
+        }
+
         &-list {
             &-title {
                 margin-bottom: 1rem;
@@ -38,12 +70,12 @@
                 font-size: $sizeXS;
                 list-style-type: none;
             }
-        
+
             &-element {
                 margin-left: 1rem;
                 text-align: left;
                 list-style-type: none;
-        
+
                 &--special {
                     margin-left: unset;
                     font-weight: 800;
@@ -71,6 +103,15 @@
             transition: visibility .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
         }
 
+        &:hover &-read-more-box::after {
+            width: 56%;
+            background-color: $darker-gold-color;
+        }
+
+        &:hover &-read-more-box-arrow {
+            margin-left: 2.5rem;
+        }
+
         &:hover {
             .services__card-front {
                 visibility: hidden;
@@ -86,6 +127,7 @@
 
     &__card-front {
         @include coverCard;
+
         &-shadow {
             @include coverCard;
             background-color: rgba(0, 0, 0, .6);
@@ -95,7 +137,7 @@
         &::before {
             content: '';
             @include coverCard;
-            background: linear-gradient(0deg, #ffd24a 19%, $gold-color 89%);
+            background: linear-gradient(0deg, $darker-gold-color 19%, $gold-color 89%);
             transform: skew(1.5deg, 1.5deg);
             z-index: -1000;
         }
@@ -109,7 +151,7 @@
         &::before {
             content: '';
             @include coverCard;
-            background: linear-gradient(0deg, #ffd24a 19%, $gold-color 89%);
+            background: linear-gradient(0deg, $darker-gold-color 19%, $gold-color 89%);
             transform: skew(-1.5deg, -1.5deg);
             z-index: -1000;
         }
