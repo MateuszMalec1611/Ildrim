@@ -112,17 +112,17 @@
             margin-right: 3rem;
         }
 
-        // &:hover {
-        //     .services__card-front {
-        //         visibility: hidden;
-        //         transform: rotateY(-180deg);
-        //         opacity: 0;
-        //     }
+        &:hover {
+            .services__card-front {
+                visibility: hidden;
+                transform: rotateY(-180deg);
+                opacity: 0;
+            }
 
-        //     .services__card-back {
-        //         transform: rotateY(0);
-        //     }
-        // }
+            .services__card-back {
+                transform: rotateY(0);
+            }
+        }
 
     }
 
