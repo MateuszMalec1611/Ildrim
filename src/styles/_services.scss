@@ -100,7 +100,7 @@
 
         &-front,
         &-back {
-            transition: visibility .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
+            transition: visibility .1s .3s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
         }
 
         &:hover &-read-more-box::after {
