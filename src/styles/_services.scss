@@ -112,10 +112,12 @@
             margin-left: 2.5rem;
         }
 
+    
     }
 
     &__card-front {
         @include coverCard;
+        z-index: 1;
 
         &-shadow {
             @include coverCard;
