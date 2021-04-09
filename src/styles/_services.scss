@@ -100,7 +100,7 @@
 
         &-front,
         &-back {
-            transition: visibility .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
+            transition: opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76), visibility .5s, transform .6s .16s ease-out;
         }
 
         &:hover &-read-more-box::after {
@@ -114,7 +114,7 @@
 
         &:hover {
             .services__card-front {
-                // visibility: hidden;
+                visibility: hidden;
                 transform: rotateY(-180deg);
                 opacity: 0;
             }
