@@ -1,0 +1,62 @@
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-white;
+    color: $background-color;
+
+    &__container {
+        padding: 6rem 1rem;
+
+        @include media-tablet {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+    }
+
+    &__boxes {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__header {
+        margin-bottom: 1rem;
+        font-size: $sizeS;
+
+        @include media-tablet {
+            font-size: $sizeM;
+        }
+    }
+
+    &__text {
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        font-size: $sizeExtraSmall;
+        color: $background-color;
+        transition: transform .3s;
+
+        @include media-tablet {
+            font-size: $sizeXS;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    &__ico {
+        margin-right: 1rem;
+    }
+
+    &__describe {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: $sizeForAdress;
+    }
+}
