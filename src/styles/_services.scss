@@ -120,8 +120,8 @@
             }
 
             .services__card-back {
-                opacity: 1;
                 transform: rotateY(0);
+                opacity: 1;
             }
         }
 
@@ -147,9 +147,9 @@
     }
 
     &__card-back {
-        opacity: 0;
         @include coverCard;
         transform: rotateY(180deg);
+        opacity: 0;
         z-index: 0;
 
         &::before {
