@@ -89,14 +89,13 @@
             height: 100%;
             object-fit: cover;
             z-index: -2;
-            transition: opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
         }
 
         &-back-img {
             position: absolute;
             top: 83%;
             left: 50%;
-            transform: translateX(-50%);       
+            transform: translateX(-50%);
         }
 
         &-front,
@@ -117,9 +116,6 @@
             .services__card-front {
                 visibility: hidden;
                 transform: rotateY(-180deg);
-                opacity: 0;
-            }
-            .services__card-img {
                 opacity: 0;
             }
 
