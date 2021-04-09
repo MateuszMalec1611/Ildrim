@@ -45,12 +45,13 @@
                 width: 100%;
                 height: .2rem;
                 background-color: $gold-color;
-                transition: width .3s ,background-color .4s;
+                transition: width .3s, background-color .4s;
             }
 
             &-text {
                 margin-right: 1rem;
                 font-size: $sizeForAdress;
+                transition: margin-right .3s;
             }
 
             &-arrow {
@@ -58,7 +59,6 @@
                 margin-top: .1rem;
                 width: 2.5rem;
                 filter: invert(27%) saturate(2878%) hue-rotate(346deg)brightness(100);
-                transition: margin .3s;
             }
 
         }
@@ -100,16 +100,16 @@
 
         &-front,
         &-back {
-            transition: visibility .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
+            transition: opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76), visibility .5s, transform .6s .16s ease-out;
         }
 
         &:hover &-read-more-box::after {
-            width: 56%;
+            width: 59%;
             background-color: $darker-gold-color;
         }
 
-        &:hover &-read-more-box-arrow {
-            margin-left: 2.5rem;
+        &:hover &-read-more-box-text {
+            margin-right: 3rem;
         }
 
         &:hover {
@@ -121,12 +121,15 @@
 
             .services__card-back {
                 transform: rotateY(0);
+                opacity: 1;
             }
         }
+
     }
 
     &__card-front {
         @include coverCard;
+        z-index: 1;
 
         &-shadow {
             @include coverCard;
@@ -146,7 +149,8 @@
     &__card-back {
         @include coverCard;
         transform: rotateY(180deg);
-        z-index: -3;
+        opacity: 0;
+        z-index: 0;
 
         &::before {
             content: '';
