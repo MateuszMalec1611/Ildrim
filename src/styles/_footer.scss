@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: $dark-white;
+    background-image: url('../images/background-footer.png');
     color: $background-color;
 
     &__container {
@@ -37,14 +37,18 @@
         align-items: center;
         font-size: $sizeExtraSmall;
         color: $background-color;
-        transition: transform .3s;
-
+        
         @include media-tablet {
             font-size: $sizeXS;
         }
 
-        &:hover {
-            transform: scale(1.02);
+        &-contact {
+            margin-top: 1rem;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.02);
+            }
         }
     }
 
@@ -57,6 +61,6 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
-        font-size: $sizeForAdress;
+        font-size: $sizeForFooter;
     }
 }
