@@ -148,7 +148,7 @@
     &__card-back {
         @include coverCard;
         transform: rotateY(180deg);
-        z-index: -3;
+        z-index: 0;
 
         &::before {
             content: '';
