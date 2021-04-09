@@ -1,7 +1,7 @@
 .about-us {
+    position: relative;
 
     &__box {
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -117,9 +117,14 @@
             }
 
             &-two {
-                right: 0;
-                bottom: 95%;
+                right: 1rem;
+                bottom: 90%;
                 transform: rotate(25deg);
+
+                @include media-extra-large-desktop {
+                    right: 25%;
+                    bottom: 78%;
+                }
             }
 
         }
