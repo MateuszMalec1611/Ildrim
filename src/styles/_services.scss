@@ -100,7 +100,7 @@
 
         &-front,
         &-back {
-            transition: visibility .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
+            transition: display .5s, transform .6s .16s ease-out, opacity .6s .16s cubic-bezier(0.74, 0.08, 0, 1.76);
         }
 
         &:hover &-read-more-box::after {
@@ -112,17 +112,17 @@
             margin-left: 2.5rem;
         }
 
-        &:hover {
-            .services__card-front {
-                visibility: hidden;
-                transform: rotateY(-180deg);
-                opacity: 0;
-            }
+        // &:hover {
+        //     .services__card-front {
+        //         display: none;
+        //         transform: rotateY(-180deg);
+        //         opacity: 0;
+        //     }
 
-            .services__card-back {
-                transform: rotateY(0);
-            }
-        }
+        //     .services__card-back {
+        //         transform: rotateY(0);
+        //     }
+        // }
     }
 
     &__card-front {
