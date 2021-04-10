@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter.ttf');
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.ttf');
+  src: url('../fonts/Poppins-Regular.ttf');
 }
 @import '_variables';
 @import '_responsive';
@@ -11,5 +12,6 @@
 @import '_swiper';
 @import '_services';
 @import '_about-us';
+@import '_footer';
 
 

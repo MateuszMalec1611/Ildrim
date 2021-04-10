@@ -3,3 +3,4 @@ import './styles/index.scss'
 
 // JS files
 import './js/swiper';
+import './js/footer';

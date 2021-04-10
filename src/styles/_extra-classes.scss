@@ -8,13 +8,13 @@
 .section-header {
     position: relative;
     display: flex;
-    margin-top: 8rem;
-    margin-bottom: 6rem;
+    margin: 8rem 0;
     justify-content: center;
-   
+    letter-spacing: .2rem;
     font-size: $sizeM;
     text-transform: uppercase;
     text-align: center;
+
     @include media-extra-large-desktop {
         font-size: $sizeL;
     }
@@ -26,8 +26,20 @@
         width: 7rem;
         height: .3rem;
         background-color: $gold-color;
+
         @include media-extra-large-desktop {
             width: 9rem;
         }
+    }
+}
+
+.lightning-ico {
+    display: none;
+
+    @include media-tablet {
+        display: block;
+        position: absolute;
+        width: 6rem;
+        z-index: -1;
     }
 }
