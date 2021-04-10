@@ -1,6 +1,7 @@
 .about-us {
-    
+
     &__box {
+        padding-bottom: 7rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -9,8 +10,8 @@
         @include media-tablet {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-row: 1fr;
             gap: 0 4rem;
+            grid-row: 1;
             min-height: 500px;
         }
 
@@ -61,7 +62,6 @@
 
         &-text-container {
             margin-top: 3rem;
-            padding-bottom: 2rem;
             display: flex;
             flex-direction: column;
             align-self: start;
@@ -112,44 +112,35 @@
     &__ico {
         display: none;
 
-        @include media-tablet {
-            display: block;
-            position: absolute;
-            width: 6rem;
-            z-index: -1;
+        &-one {
+            left: 4%;
+            top: -17%;
+            transform: rotate(-45deg);
+        }
 
-            &-one {
-                left: 4%;
-                top: -17%;
-                transform: rotate(-45deg);
-            }
+        &-two {
+            left: 54%;
+            top: 88%;
+            transform: rotate(-38deg);
+        }
 
-            &-two {
-                left: 54%;
-                top: 88%;
-                transform: rotate(-38deg);
-            }
-            &-three {
-                left: 86%;
-                top: -12%;
-                transform: rotate(-172deg);
-            }
-
+        &-three {
+            left: 86%;
+            top: -12%;
+            transform: rotate(-172deg);
         }
     }
 
     &__btn {
-        margin-top: 2rem;
         padding: 1.4rem 3rem;
-        align-self: flex-start;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
         transition: transform .3s;
 
-        @include media-desktop {
-            display: none;
-        }
-
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
     }
 }

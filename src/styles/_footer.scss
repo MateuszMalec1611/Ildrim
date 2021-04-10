@@ -6,7 +6,7 @@
     color: $background-color;
 
     &__container {
-        padding: 6rem 1rem;
+        padding: 3.5rem 1rem;
 
         @include media-tablet {
             display: flex;
@@ -26,9 +26,7 @@
         margin-bottom: 1rem;
         font-size: $sizeS;
 
-        @include media-tablet {
-            font-size: $sizeM;
-        }
+      
     }
 
     &__text {
@@ -38,9 +36,7 @@
         font-size: $sizeExtraSmall;
         color: $background-color;
         
-        @include media-tablet {
-            font-size: $sizeXS;
-        }
+       
 
         &-contact {
             margin-top: 1rem;
