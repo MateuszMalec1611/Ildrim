@@ -1,7 +1,8 @@
 .about-us {
-    position: relative;
 
     &__box {
+        padding-bottom: 7rem;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -9,8 +10,8 @@
         @include media-tablet {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-row: 1fr;
             gap: 0 4rem;
+            grid-row: 1;
             min-height: 500px;
         }
 
@@ -29,6 +30,13 @@
                 left: 0;
                 height: 50rem;
             }
+
+            @include media-large-desktop {
+                width: 100%;
+                max-width: 60rem;
+                left: unset;
+                right: 55%;
+            }
         }
 
         &-img {
@@ -44,17 +52,16 @@
             @include media-tablet {
                 height: 45rem;
                 object-fit: cover;
-                border-radius: 0 10px 10px 0;
+                border-radius: 0 1rem 1rem 0;
             }
 
-            @include media-extra-large-desktop {
-                height: unset;
+            @include media-large-desktop {
+                border-radius: 1rem;
             }
         }
 
         &-text-container {
             margin-top: 3rem;
-            padding-bottom: 2rem;
             display: flex;
             flex-direction: column;
             align-self: start;
@@ -68,11 +75,11 @@
                 margin-top: 3rem;
                 height: 40rem;
                 border-radius: 2rem 0 0 2rem;
-                box-shadow: -7px 7px 30px black;
+                box-shadow: -7px 7px 30px #2f2f2f4d;
             }
 
             &::-webkit-scrollbar {
-                width: 1rem;
+                width: .5rem;
             }
 
             &::-webkit-scrollbar-thumb {
@@ -83,7 +90,6 @@
         }
 
         &-text {
-            padding-right: .7rem;
             width: 100%;
             max-width: 60rem;
             text-align: left;
@@ -91,11 +97,13 @@
 
             @include media-tablet {
                 margin-top: 0;
+                padding: 1.8rem;
                 align-self: center;
                 max-width: 60rem;
             }
 
             @include media-desktop {
+                padding: 3.3rem;
                 font-size: $extraSize;
             }
         }
@@ -104,44 +112,35 @@
     &__ico {
         display: none;
 
-        @include media-tablet {
-            display: block;
-            position: absolute;
-            width: 6rem;
-            z-index: -1;
+        &-one {
+            left: 4%;
+            top: -17%;
+            transform: rotate(-45deg);
+        }
 
-            &-one {
-                left: 45%;
-                top: 70%;
-                transform: rotate(-30deg);
-            }
+        &-two {
+            left: 54%;
+            top: 88%;
+            transform: rotate(-38deg);
+        }
 
-            &-two {
-                right: 1rem;
-                bottom: 82%;
-                transform: rotate(25deg);
-
-                @include media-extra-large-desktop {
-                    right: 25%;
-                    bottom: 78%;
-                }
-            }
-
+        &-three {
+            left: 86%;
+            top: -12%;
+            transform: rotate(-172deg);
         }
     }
 
     &__btn {
-        margin-top: 2rem;
         padding: 1.4rem 3rem;
-        align-self: flex-start;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
         transition: transform .3s;
 
-        @include media-desktop {
-            display: none;
-        }
-
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
     }
 }
