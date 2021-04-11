@@ -1,6 +1,6 @@
 .form {
     &__header {
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
 
         &::before {
             display: none;
@@ -14,8 +14,7 @@
         flex-direction: column;
         align-items: center;
 
-        &-for-label {
-            margin-top: 3rem;
+        &-for-input {
             padding-top: 3rem;
             position: relative;
             display: flex;
@@ -26,27 +25,31 @@
 
         &-label {
             position: absolute;
-            top: 0;
+            top: 3rem;
             left: 0;
             font-size: $extraSize;
             transition: top .3s, font-size .3s, color .3s;
-
+            z-index: -1;
         }
 
         &-input,
         &-description {
             position: relative;
-            padding: 0 0 0 .5rem;
+            padding-left: .5rem;
             background-color: transparent;
             color: $font-color;
-            font-size: $sizeXS;
             border: none;
             border-bottom: .1rem solid $font-color;
             outline: none;
+        }
 
+        &-input {
+            height: 4rem;
+            font-size: $sizeXS;
+            
             &:focus~.form__box-label,
             &:valid~.form__box-label {
-                top: -0.4rem;
+                top: .9rem;
                 font-size: $sizeExtraSmall;
                 color: #9ca1b7;
             }
@@ -56,10 +59,22 @@
             max-width: 100%;
             min-width: 100%;
             font-size: 2.6rem;
+            background-color: transparent;
+
+            &:focus, &:valid {
+                height: 10rem;
+            }
+
+            &:focus~.form__box-label,
+            &:valid~.form__box-label {
+                top: 1rem;
+                font-size: $sizeExtraSmall;
+                color: #9ca1b7;
+            }
         }
 
         &-error {
-            display: block;
+            display: none;
             font-size: $sizeForFooter;
             color: tomato;
         }
@@ -86,9 +101,7 @@
         }
 
         &-time {
-            margin-top: 1.5rem;
-            margin-right: 2rem;
-            margin-left: 1rem;
+            margin: 1.5rem 2rem 0 1rem;
             background-color: transparent;
             border: none;
             color: #ffffff;
@@ -156,7 +169,6 @@
     }
 
     &__button {
-        margin-top: $sizeXS;
         display: block;
         margin-top: $sizeExtraSmall;
         padding: 1.2rem 4rem;
