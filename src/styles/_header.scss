@@ -1,0 +1,46 @@
+.header {
+
+    &__img {
+        position: relative;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../images/solar-panel-1175819_1280.jpg');
+        background-size: cover;
+        background-position: 20%;
+        z-index: 0;
+
+        @include media-tablet {
+            background-position: center;
+        }
+
+        &-bg {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .6);
+            z-index: -10;
+        }
+    }
+
+    &__logo {
+        width: 85%;
+
+        @include media-tablet {
+            width: 80%;
+        }
+
+        @include media-desktop {
+            width: 60%;
+        }
+    }
+
+    &__arrow {
+        height: 3rem;
+        position: absolute;
+        bottom: 3rem;
+        animation: bounce 2s linear infinite;
+        filter: invert(100%);
+    }
+}
