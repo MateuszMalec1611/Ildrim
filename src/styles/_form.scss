@@ -15,6 +15,7 @@
         align-items: center;
 
         &-for-input {
+            margin-top: 3rem;
             padding-top: 3rem;
             position: relative;
             display: flex;
@@ -67,7 +68,7 @@
 
             &:focus~.form__box-label,
             &:valid~.form__box-label {
-                top: 1rem;
+                top: .6rem;
                 font-size: $sizeExtraSmall;
                 color: #9ca1b7;
             }
