@@ -26,26 +26,26 @@
 
     const checkFullName = () => {
         const re = /^([a-z]{2,3} [A-ZŁŻ][a-ząęóżźćńłś]{2,})|([A-ZŁŻ][a-ząęóżźćńłś]{2,})(-[A-ZŁŻ][a-ząęóżźćńłś]{2,})?$/;
-        re.test(fullName.value) ? clearError(fullName) : showError(fullName, 'Podaj poprawne dane!');
+        re.test(fullName.value) ? clearError(fullName) : showError(fullName, 'Wprowadź poprawne dane');
     }
 
     const checkPhoneNumber = () => {
         const re = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
-        re.test(phoneNumber.value) ? clearError(phoneNumber) : showError(phoneNumber, 'Podaj poprawny numer telefonu!');
+        re.test(phoneNumber.value) ? clearError(phoneNumber) : showError(phoneNumber, 'Wprowadź poprawny numer telefonu');
     }
 
     const checkEmail = () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        re.test(email.value) ? clearError(email) : showError(email, 'Podaj poprawny adres email!');
+        re.test(email.value) ? clearError(email) : showError(email, 'Wprowadź poprawny adres email');
     }
 
     const checkCity = () => {
-        city.value.length >= 2 ? clearError(city) : showError(city, 'Podaj poprawny adres email!');
+        city.value.length >= 2 ? clearError(city) : showError(city, 'Wprowadź poprawną nazwe miasta');
     }
 
     const checkZip = () => {
         const re = /[0-9]{2}-[0-9]{3}/;
-        re.test(zip.value) ? clearError(zip) : showError(zip, 'Podaj poprawny adres email!');
+        re.test(zip.value) ? clearError(zip) : showError(zip, 'Wprowadź poprawny kod pocztowy');
     }
 
     button.addEventListener('click', event => {

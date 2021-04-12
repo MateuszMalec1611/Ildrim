@@ -72,7 +72,7 @@
         &-error {
             display: none;
             font-size: $sizeForFooter;
-            color: tomato;
+            color: $red-color;
         }
 
         &-appt-header {
@@ -264,7 +264,7 @@
         }
 
         &-error {
-            color: tomato;
+            color: $red-color;
             font-size: $sizeExtraSmall;
         }
     }
