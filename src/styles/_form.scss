@@ -37,40 +37,35 @@
         &-description {
             position: relative;
             padding-left: .5rem;
+            height: 4rem;
             background-color: transparent;
             color: $font-color;
+            font-size: $sizeXS;
             border: none;
             border-bottom: .1rem solid $font-color;
             outline: none;
         }
 
         &-input {
-            height: 4rem;
-            font-size: $sizeXS;
-            
+
             &:focus~.form__box-label,
             &:valid~.form__box-label {
-                top: .9rem;
-                font-size: $sizeExtraSmall;
-                color: #9ca1b7;
+                @include activeLabel;
             }
         }
 
         &-description {
             max-width: 100%;
             min-width: 100%;
-            font-size: 2.6rem;
-            background-color: transparent;
+            font-family: $font-family;
+            transition: height .3s;
 
-            &:focus, &:valid {
-                height: 10rem;
+            &--active {
+                @include activeLabel;
             }
 
-            &:focus~.form__box-label,
-            &:valid~.form__box-label {
-                top: .6rem;
-                font-size: $sizeExtraSmall;
-                color: #9ca1b7;
+            &:focus~.form__box-label {
+                @include activeLabel;
             }
         }
 
