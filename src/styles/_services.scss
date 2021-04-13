@@ -2,7 +2,6 @@
     margin-bottom: 200px;
 
     &__box {
-        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -164,14 +163,15 @@
     }
 
     &__ico-one {
-        left: 4%;
+        left: -2%;
         top: 64%;
-        transform: rotate(-32deg);
+        transform: rotate(-41deg)
     }
+
     &__ico-two {
-        left: 89%;
+        left: 87%;
         top: 18%;
-        transform: rotate(26deg);
+        transform: rotate(-7deg);
     }
 
 }
