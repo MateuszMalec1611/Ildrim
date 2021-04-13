@@ -6,36 +6,39 @@
     transition: background-color .3s;
 
     &--shadow {
-        background-color: rgba(255, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     &__box {
+        position: relative;
         display: flex;
         padding: $sizeExtraSmall 0;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         transition: padding .3s;
 
-        @include media-desktop {
-            padding: 2rem 4rem;
+        @include media-tablet {
+            padding: 1.6rem 4rem;
         }
+
         &--active {
-            padding: unset;
-            @include media-desktop {
-                padding: 0 4rem;
+            padding: 1.8rem 0;
+
+            @include media-tablet {
+                padding: .8rem 4rem;
             }
         }
 
     }
 
     &__logo {
-        margin-left: -2rem;
-        padding: 0 2rem;
-        transform: scale(.85);
+        position: absolute;
+        top: -4.4rem;
+        left: -1.4rem;
 
         @include media-tablet {
-            padding: unset;
-            margin-left: unset;
+            top: -4rem;
+            left: 1rem;
         }
     }
 
@@ -44,7 +47,7 @@
         padding-right: 1.4rem;
         z-index: 100;
 
-        @include media-desktop {
+        @include media-tablet {
             display: none;
         }
     }
@@ -55,10 +58,10 @@
         height: 100vh;
         width: 100vw;
         background-color: $background-color;
-        transform: translateX(100%);
+        transform: translateX(120%);
         transition: transform .3s;
 
-        @include media-desktop {
+        @include media-tablet {
             position: static;
             transform: unset;
             height: unset;
@@ -85,7 +88,7 @@
         font-size: $sizeM;
         text-align: center;
 
-        @include media-desktop {
+        @include media-tablet {
             position: static;
             transform: unset;
             display: flex;
@@ -99,7 +102,7 @@
         line-height: 6rem;
         padding: 1rem 1.5rem;
 
-        @include media-desktop {
+        @include media-tablet {
             padding: 1rem 3rem;
         }
 
@@ -119,6 +122,15 @@
         }
     }
 
+
+    &__contact-link {
+        display: none;
+
+        @include media-tablet {
+            display: block;
+        }
+    }
+
     &__link-desktop {
         display: none;
 
@@ -133,25 +145,12 @@
         }
     }
 
-    &__contact-link {
-        display: none;
-
-        @include media-desktop {
-            display: block;
-        }
-    }
-
-    &__web-button {
-        padding-right: .5rem;
-        border: none;
-    }
-
     &__envelope {
         margin-right: .5rem;
         padding: 1rem;
         transform: scale(1.2);
 
-        @include media-desktop {
+        @include media-tablet {
             display: none;
         }
     }
@@ -166,4 +165,3 @@
         transform: translateX(-50%);
     }
 }
-
