@@ -6,12 +6,12 @@
         height: 100vh;
         justify-content: center;
         align-items: center;
-        background-image: url('../images/solar-panel-1175819_1280.jpg');
+        background-image: url('../images/header-small.jpg');
         background-size: cover;
-        background-position: 20%;
         z-index: 0;
-
+        
         @include media-tablet {
+            background-image: url('../images/header-big.jpg');
             background-position: center;
         }
 
@@ -25,22 +25,18 @@
     }
 
     &__logo {
-        width: 85%;
+        margin-bottom: 18rem;
+        width: 30rem;
 
         @include media-tablet {
-            width: 80%;
-        }
-
-        @include media-desktop {
-            width: 60%;
+            margin-bottom: unset;
+            transform: scale(1.8);
         }
     }
 
     &__arrow {
-        height: 3rem;
         position: absolute;
-        bottom: 3rem;
+        bottom: 1rem;
         animation: bounce 2s linear infinite;
-        filter: invert(100%);
     }
 }

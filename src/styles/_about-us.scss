@@ -2,7 +2,6 @@
 
     &__box {
         padding-bottom: 7rem;
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -114,8 +113,8 @@
 
         &-one {
             left: 4%;
-            top: -17%;
-            transform: rotate(-45deg);
+            top: -26%;
+            transform: rotate(-59deg);
         }
 
         &-two {
@@ -127,7 +126,7 @@
         &-three {
             left: 86%;
             top: -12%;
-            transform: rotate(-172deg);
+            transform: rotate(9deg);
         }
     }
 
