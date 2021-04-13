@@ -97,6 +97,8 @@
         }
 
         &-time {
+            overflow: unset;
+            position: relative;
             margin: 1.5rem 2rem 0 1rem;
             background-color: transparent;
             border: none;
@@ -105,10 +107,6 @@
             width: 11rem;
             cursor: text;
             outline: transparent;
-
-            @include media-tablet {
-                width: 11rem;
-            }
 
             &:focus {
                 color: #ffffff;
@@ -144,11 +142,16 @@
             }
 
             &::-webkit-calendar-picker-indicator {
-                transform: scale(1.5);
+                padding-left: 6rem;
+                position: absolute;
+                right: 2.5rem;
+                transform: scale(1.8);
                 filter: invert(100%) saturate(3207%) brightness(100%);
+                cursor: pointer;
 
                 @include media-tablet {
-                    transform: scale(1.6);
+                    transform: scale(2.2);
+                    right: 3rem;
                 }
             }
         }

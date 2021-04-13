@@ -22,6 +22,7 @@
         error.style.display = 'block';
         error.innerText = text;
         $mistakes++;
+        if($mistakes === 1) element.focus();
     }
 
     const clearError = element => {
