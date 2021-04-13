@@ -12,7 +12,7 @@
     &__box {
         position: relative;
         display: flex;
-        padding: $sizeExtraSmall 0;
+        padding: 2rem 0;
         justify-content: flex-end;
         align-items: center;
         transition: padding .3s;
@@ -22,7 +22,7 @@
         }
 
         &--active {
-            padding: 1.8rem 0;
+            padding: 1.6rem 0;
 
             @include media-tablet {
                 padding: .8rem 4rem;
@@ -134,7 +134,7 @@
     &__link-desktop {
         display: none;
 
-        @include media-desktop {
+        @include media-tablet {
             display: block;
             padding: 1rem 3rem;
             transition: transform .3s;
