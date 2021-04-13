@@ -1,5 +1,4 @@
 (function form() {
-    'use strict';
     const textAreaInput = document.querySelector('.form__box-description');
     const fullName = document.querySelector('#full-name');
     const phoneNumber = document.querySelector('#phone');
@@ -13,7 +12,7 @@
         data: 'Wprowadź poprawne dane',
         number: 'Wprowadź poprawny numer telefonu',
         email: 'Wprowadź poprawny adres email',
-        city: 'Wprowadź poprawną nazwe miasta',
+        city: 'Wprowadź poprawną nazwę miasta',
         zipCode: 'Wprowadź poprawny kod pocztowy'
     }
 
