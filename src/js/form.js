@@ -1,4 +1,5 @@
 (function form() {
+    'use strict';
     const textAreaInput = document.querySelector('.form__box-description');
     const fullName = document.querySelector('#full-name');
     const phoneNumber = document.querySelector('#phone');
@@ -8,6 +9,13 @@
     const button = document.querySelector('.form__button');
     let $mistakes;
 
+    const formErrors = {
+        data: 'Wprowadź poprawne dane',
+        number: 'Wprowadź poprawny numer telefonu',
+        email: 'Wprowadź poprawny adres email',
+        city: 'Wprowadź poprawną nazwe miasta',
+        zipCode: 'Wprowadź poprawny kod pocztowy'
+    }
 
     const showError = (element, text) => {
         const formBox = element.parentElement;
@@ -26,26 +34,26 @@
 
     const checkFullName = () => {
         const re = /^([a-z]{2,3} [A-ZŁŻ][a-ząęóżźćńłś]{2,})|([A-ZŁŻ][a-ząęóżźćńłś]{2,})(-[A-ZŁŻ][a-ząęóżźćńłś]{2,})?$/;
-        re.test(fullName.value) ? clearError(fullName) : showError(fullName, 'Wprowadź poprawne dane');
+        re.test(fullName.value) ? clearError(fullName) : showError(fullName, formErrors.data);
     }
 
     const checkPhoneNumber = () => {
         const re = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
-        re.test(phoneNumber.value) ? clearError(phoneNumber) : showError(phoneNumber, 'Wprowadź poprawny numer telefonu');
+        re.test(phoneNumber.value) ? clearError(phoneNumber) : showError(phoneNumber, formErrors.number);
     }
 
     const checkEmail = () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        re.test(email.value) ? clearError(email) : showError(email, 'Wprowadź poprawny adres email');
+        re.test(email.value) ? clearError(email) : showError(email, formErrors.email);
     }
 
     const checkCity = () => {
-        city.value.length >= 2 ? clearError(city) : showError(city, 'Wprowadź poprawną nazwe miasta');
+        city.value.length >= 2 ? clearError(city) : showError(city, formErrors.city);
     }
 
     const checkZip = () => {
         const re = /[0-9]{2}-[0-9]{3}/;
-        re.test(zip.value) ? clearError(zip) : showError(zip, 'Wprowadź poprawny kod pocztowy');
+        re.test(zip.value) ? clearError(zip) : showError(zip, formErrors.zipCode);
     }
 
     button.addEventListener('click', event => {
@@ -55,8 +63,8 @@
         checkEmail();
         checkCity();
         checkZip();
-        
-        if($mistakes > 0 ) event.preventDefault();
+
+        if ($mistakes > 0) event.preventDefault();
     });
 
     const textAreaStyles = () => {
