@@ -21,7 +21,15 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 90rem;
+            max-width: 80rem;
+
+            @include media-tablet {
+                width: 84%;
+            }
+
+            @include media-desktop {
+                width: 100%;
+            }
         }
 
         &-label {
@@ -273,15 +281,15 @@
     }
 
     &__ico-one {
-        left: 4%;
+        left: -4%;
         top: 64%;
-        transform: rotate(-32deg);
+        transform: rotate(-41deg);
     }
 
     &__ico-two {
         left: 89%;
         top: 18%;
-        transform: rotate(26deg);
+        transform: rotate(-7deg);
     }
 
 }
