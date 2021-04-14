@@ -112,7 +112,7 @@
             position: absolute;
             bottom: 3.2rem;
             right: -1.7rem;
-            filter: brightness(0) invert(1);
+            filter: invert(78%) sepia(93%) saturate(1308%) hue-rotate(328deg) brightness(103%) contrast(97%);
             animation: moveTap 2s linear infinite;
         }
     }
