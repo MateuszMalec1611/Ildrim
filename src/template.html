@@ -158,6 +158,87 @@
                 <img class="lightning-ico services__ico-two" src="./images/logoLightning.svg" width="120px" height="120px" alt="">
             </div>
         </section>
+
+        <section class="form">
+            <div class="container">
+                <form class="form__box">
+                    <p class="section-header form__header">Wyceń swój projekt</p>
+
+                    <div class="form__box-for-input">
+                        <input id="full-name" name="full-name" class="form__box-input" type="text" required>
+                        <label for="full-name" class="form__box-label">Imię i nazwisko</label>
+                        <p class="form__box-error"></p>
+                    </div>
+
+                    <label class="form__box-for-input">
+                        <input id="phone" name="phone" class="form__box-input" type="text" required>
+                        <label for="phone" class="form__box-label">Numer telefonu</label>
+                        <p class="form__box-error"></p>
+                    </label>
+
+                    <div class="form__box-for-input">
+                        <input id="email" name="emial" class="form__box-input" type="text" required>
+                        <label for="email" class="form__box-label">Adres e-mail</label>
+                        <p class="form__box-error"></p>
+                    </div>
+
+                    <div class="form__box-for-input">
+                        <input id="city" name="city" class="form__box-input" type="text" required>
+                        <label for="city" class="form__box-label">Miejscowość</label>
+                        <p class="form__box-error"></p>
+                    </div>
+                    <div class="form__box-for-input">
+                        <input id="zip" name="zip" class="form__box-input" type="text" required>
+                        <label for="zip" class="form__box-label">Kod pocztowy</label>
+                        <p class="form__box-error"></p>
+                    </div>
+
+                    <div class="form__box-for-input">
+                        <textarea class="form__box-description" name="description"></textarea>
+                        <label for="description" class="form__box-label">Treść wiadomości</label>
+                    </div>
+
+                    <div class="form__box-for-input">
+                        <p class="form__box-appt-header">Sugerowane godziny, w których nasz konsultant będzie mógł do ciebie oddzwonić</p>
+
+                        <div class="form__box-appt-container">
+                            <label class="form__box-appt-container-text">Od
+                                <input type="time" class="form__box-appt-container-time">
+                            </label>
+
+                            <label class="form__box-appt-container-text">Do
+                                <input type="time" class="form__box-appt-container-time form__box-appt-container-time--margin">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form__button-box">
+
+                        <div class="form__checkbox">
+                            <input class="form__checkbox-check" type="checkbox" id="checkbox" name="personal-data-aggrement" required>
+                            <span class="form__checkbox-custom"></span>
+                            <label class="form__checkbox-text" for="checkbox">Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w celach handlowych i marketingowych przez Ildrim.</label>
+                        </div>
+
+                        <div class="form__button-wrapper">
+                            <button class="form__button" type="sumbit" name="sumbit">wyślij</button>
+                            <div class="lds-ring">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="form__message"></div>
+                    </div>
+
+                    <img class="lightning-ico form__ico-one" src="./images/zap.svg" alt="">
+                    <img class="lightning-ico form__ico-two" src="./images/zap.svg" alt="">
+                </form>
+
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
