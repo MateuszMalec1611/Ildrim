@@ -1,6 +1,7 @@
 .about-us {
 
     &__box {
+        position: relative;
         padding-bottom: 7rem;
         display: flex;
         flex-direction: column;
@@ -85,10 +86,10 @@
                 background-color: $font-color;
                 outline: 1px solid slategrey;
             }
-
         }
 
         &-text {
+            padding-right: .3rem;
             width: 100%;
             max-width: 60rem;
             text-align: left;
@@ -105,6 +106,14 @@
                 padding: 3.3rem;
                 font-size: $extraSize;
             }
+        }
+
+        &-tap {
+            position: absolute;
+            bottom: 3.2rem;
+            right: -1.7rem;
+            filter: brightness(0) invert(1);
+            animation: moveTap 2s linear infinite;
         }
     }
 
@@ -133,10 +142,15 @@
     &__btn {
         padding: 1.4rem 3rem;
         position: absolute;
-        right: 0;
+        left: 1rem;
         bottom: 0;
         background-color: #fff;
         transition: transform .3s;
+
+        @include media-tablet {
+            left: unset;
+            right: 4rem;
+        }
 
         &:hover {
             transform: scale(1.04);
