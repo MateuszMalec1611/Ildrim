@@ -38,15 +38,18 @@
     }
 
     &__ico-one {
-        left: 21%;
-        top: -2%;
-        transform: rotate(-61deg)
+        left: -1%;
+        top: 36%;
+        transform: rotate(-61deg);
+
+        @include media-desktop {
+            left: 1%;
+        }
     }
 
     &__ico-two {
-        left: 70.5%;
-        top: -2%;
+        left: 86.5%;
+        top: 16%;
         transform: rotate(-1deg);
     }
-
 }

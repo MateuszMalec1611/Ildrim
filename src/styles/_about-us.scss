@@ -122,20 +122,28 @@
 
         &-one {
             left: 4%;
-            top: -26%;
+            top: -30%;
             transform: rotate(-59deg);
+
+            @include media-desktop {
+                top: -26%;
+            }
         }
 
         &-two {
             left: 54%;
-            top: 88%;
+            top: 93%;
             transform: rotate(-38deg);
         }
 
         &-three {
             left: 86%;
-            top: -12%;
+            top: -22%;
             transform: rotate(9deg);
+
+            @include media-desktop {
+                top: -16%;
+            }
         }
     }
 
@@ -144,6 +152,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+
         background-color: #fff;
         transition: transform .3s;
 

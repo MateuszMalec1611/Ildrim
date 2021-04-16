@@ -160,7 +160,7 @@
 
     &::before {
         @include nav-under-line;
-        background-color: $font-color;
+        background-color: $gold-color;
         transform: translateX(-50%);
     }
 }
