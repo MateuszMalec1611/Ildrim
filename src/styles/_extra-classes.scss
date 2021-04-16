@@ -1,3 +1,11 @@
+.scroll-fix {
+    &::before {
+        display: block;
+        height: 1.5rem;
+        content: '';
+    }
+}
+
 .container {
     position: relative;
     margin: 0 auto;
