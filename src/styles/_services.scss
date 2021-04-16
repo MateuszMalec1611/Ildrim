@@ -1,8 +1,6 @@
 .services {
-    margin-bottom: 200px;
 
     &__box {
-        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -163,15 +161,49 @@
         }
     }
 
-    &__ico-one {
-        left: 4%;
-        top: 64%;
-        transform: rotate(-32deg);
+    &__swiper {
+        &-container {
+            top: 0;
+            height: 75%;
+        }
+
+        &-slide {
+            margin-top: 2rem;
+            padding: 0 2rem;
+            line-height: 2.2rem;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+
+        &-prev,
+        &-next {
+            position: absolute;
+            left: 50%;
+            top: 31rem !important;
+        }
+
+        &-pagination .swiper-pagination-bullet {
+            position: relative;
+            top: 12px;
+            background-color: $font-color;
+        }
+
+        &-pagination .swiper-pagination-bullet-active {
+            background-color: $gold-color;
+        }
+
     }
+
+    &__ico-one {
+        left: -2%;
+        top: 64%;
+        transform: rotate(-41deg)
+    }
+
     &__ico-two {
-        left: 89%;
+        left: 87%;
         top: 18%;
-        transform: rotate(26deg);
+        transform: rotate(-7deg);
     }
 
 }

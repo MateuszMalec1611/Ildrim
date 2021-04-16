@@ -1,4 +1,13 @@
+.scroll-fix {
+    &::before {
+        display: block;
+        height: 1.5rem;
+        content: '';
+    }
+}
+
 .container {
+    position: relative;
     margin: 0 auto;
     padding: 0 2em;
     width: 100%;
@@ -39,7 +48,6 @@
     @include media-tablet {
         display: block;
         position: absolute;
-        width: 6rem;
         z-index: -1;
     }
 }

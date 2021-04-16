@@ -1,0 +1,295 @@
+.form {
+    &__header {
+        margin-bottom: 5rem;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &__box {
+        position: relative;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-for-input {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 80rem;
+
+            @include media-tablet {
+                width: 84%;
+            }
+
+            @include media-desktop {
+                width: 100%;
+            }
+        }
+
+        &-label {
+            position: absolute;
+            top: 3rem;
+            left: 0;
+            font-size: $extraSize;
+            transition: top .3s, font-size .3s, color .3s;
+            z-index: -1;
+        }
+
+        &-input,
+        &-description {
+            position: relative;
+            padding-left: .5rem;
+            height: 4rem;
+            background-color: transparent;
+            color: $font-color;
+            font-size: $sizeXS;
+            border: none;
+            border-bottom: .1rem solid $font-color;
+            outline: none;
+        }
+
+        &-input {
+
+            &:focus~.form__box-label,
+            &:valid~.form__box-label {
+                @include activeLabel;
+            }
+        }
+
+        &-description {
+            max-width: 100%;
+            min-width: 100%;
+            font-family: $font-family;
+            transition: height .3s;
+
+            &--active {
+                @include activeLabel;
+            }
+
+            &:focus~.form__box-label {
+                @include activeLabel;
+            }
+        }
+
+        &-error {
+            display: none;
+            font-size: $sizeForFooter;
+            color: $red-color;
+        }
+
+        &-appt-header {
+            font-size: $sizeExtraSmall;
+        }
+
+    }
+
+    &__box-appt-container {
+        display: flex;
+        justify-content: center;
+
+        @include media-tablet {
+            margin-left: 3rem;
+            justify-content: flex-start;
+        }
+
+        &-text {
+            display: flex;
+            align-items: center;
+            font-size: $sizeForFooter;
+        }
+
+        &-time {
+            overflow: unset;
+            position: relative;
+            margin: 1.5rem 2rem 0 1rem;
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: $sizeExtraSmall;
+            width: 11rem;
+            cursor: text;
+            outline: transparent;
+
+            &:focus {
+                color: #ffffff;
+            }
+
+            &--margin {
+                margin-right: 0;
+            }
+
+            &::-webkit-datetime-edit-fields-wrapper {
+                display: flex;
+            }
+
+            &::-webkit-datetime-edit-text {
+                padding: 0 .1rem;
+            }
+
+            &::-webkit-datetime-edit-hour-field,
+            &::-webkit-datetime-edit-minute-field {
+                background-color: transparent;
+                border: 1px solid $font-color;
+                border-radius: 15%;
+                padding: 1.2rem 1rem;
+
+                &:focus {
+                    color: #ffffff;
+                }
+            }
+
+            &::-webkit-clear-button,
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+
+            &::-webkit-calendar-picker-indicator {
+                padding-left: 6rem;
+                position: absolute;
+                right: 2.5rem;
+                transform: scale(1.8);
+                filter: invert(100%) saturate(3207%) brightness(100%);
+                cursor: pointer;
+
+                @include media-tablet {
+                    transform: scale(2.2);
+                    right: 3rem;
+                }
+            }
+        }
+    }
+
+    &__button-box {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        width: 100%;
+        max-width: 90rem;
+    }
+
+    &__button {
+        display: block;
+        margin-top: $sizeExtraSmall;
+        padding: 1.2rem 4rem;
+        transition: transform .3s;
+
+        @include media-tablet {
+            padding: 1.4rem 6rem;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        display: flex;
+        width: 90%;
+
+        &-check {
+            opacity: 0;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            z-index: 1;
+        }
+
+        &-custom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 2px solid $font-color;
+            transition: all .3s ease-out;
+
+            &::after {
+                position: absolute;
+                content: '';
+                left: 12px;
+                top: 12px;
+                height: 0;
+                width: 0;
+                border-radius: 5px;
+                border: solid $background-color;
+                border-width: 0 3px 3px 0;
+                opacity: 0;
+            }
+        }
+
+        input:checked~&-custom {
+            background-color: $font-color;
+            border-radius: 5px;
+            transform: rotate(0deg) scale(1);
+            opacity: 1;
+            border: 2px solid $font-color;
+        }
+
+        input:checked~&-custom:after {
+            transform: rotate(45deg) scale(1);
+            opacity: 1;
+            left: 8px;
+            top: 3px;
+            width: 6px;
+            height: 12px;
+            border: solid $background-color;
+            border-width: 0 2px 2px 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+
+
+        &-text {
+            align-self: center;
+            margin-left: 3rem;
+            font-size: $sizeForAdress;
+            cursor: pointer;
+
+            @include media-tablet {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    &__message {
+        margin-top: $sizeExtraSmall;
+
+        &-success {
+            color: green;
+            font-size: $sizeExtraSmall;
+        }
+
+        &-error {
+            color: $red-color;
+            font-size: $sizeExtraSmall;
+        }
+    }
+
+    &__ico-one {
+        left: -4%;
+        top: 55%;
+        transform: rotate(-41deg);
+    }
+
+    &__ico-two {
+        left: 89%;
+        top: 20%;
+        transform: rotate(-7deg);
+    }
+
+}

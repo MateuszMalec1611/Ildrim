@@ -1,8 +1,8 @@
 .about-us {
 
     &__box {
-        padding-bottom: 7rem;
         position: relative;
+        padding-bottom: 7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -86,10 +86,10 @@
                 background-color: $font-color;
                 outline: 1px solid slategrey;
             }
-
         }
 
         &-text {
+            padding-right: .3rem;
             width: 100%;
             max-width: 60rem;
             text-align: left;
@@ -107,6 +107,14 @@
                 font-size: $extraSize;
             }
         }
+
+        &-tap {
+            position: absolute;
+            bottom: 3.2rem;
+            right: -1.7rem;
+            filter: invert(78%) sepia(93%) saturate(1308%) hue-rotate(328deg) brightness(103%) contrast(97%);
+            animation: moveTap 2s linear infinite;
+        }
     }
 
     &__ico {
@@ -114,30 +122,44 @@
 
         &-one {
             left: 4%;
-            top: -17%;
-            transform: rotate(-45deg);
+            top: -30%;
+            transform: rotate(-59deg);
+
+            @include media-desktop {
+                top: -26%;
+            }
         }
 
         &-two {
             left: 54%;
-            top: 88%;
+            top: 93%;
             transform: rotate(-38deg);
         }
 
         &-three {
             left: 86%;
-            top: -12%;
-            transform: rotate(-172deg);
+            top: -22%;
+            transform: rotate(9deg);
+
+            @include media-desktop {
+                top: -16%;
+            }
         }
     }
 
     &__btn {
         padding: 1.4rem 3rem;
         position: absolute;
-        right: 0;
+        left: 0;
         bottom: 0;
+
         background-color: #fff;
         transition: transform .3s;
+
+        @include media-tablet {
+            left: unset;
+            right: 4rem;
+        }
 
         &:hover {
             transform: scale(1.04);

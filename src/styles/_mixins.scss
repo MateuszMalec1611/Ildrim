@@ -6,3 +6,32 @@
     bottom: 0;
     border-radius: 20px;
 }
+
+@mixin activeLabel {
+    top: .9rem;
+    font-size: $sizeExtraSmall;
+    color: #9ca1b7;
+}
+
+@mixin hamburger-bars {
+    height: .2rem;
+    width: 2.6rem;
+    background-color: white;
+}
+
+@mixin hamburger {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform .3s cubic-bezier(1,.01,0,.4);
+}
+
+@mixin nav-under-line {
+    position: absolute;
+    content: '';
+    bottom: .5rem;
+    left: 50%;
+    width: 6rem;
+    height: .2rem;
+}
