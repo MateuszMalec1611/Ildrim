@@ -34,5 +34,9 @@ export const galleryTop = new Swiper('.gallery__swiper-container', {
     pagination: {
         el: '.swiper-pagination',
     },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 });
 
