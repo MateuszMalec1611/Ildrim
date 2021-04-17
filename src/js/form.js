@@ -6,7 +6,7 @@
     const city = document.querySelector('#city');
     const zip = document.querySelector('#zip');
     const button = document.querySelector('.form__button');
-    let $mistakes;
+    let $mistakes = 0;
 
     const formErrors = {
         data: 'Wprowadź poprawne dane',
@@ -55,6 +55,12 @@
         const re = /[0-9]{2}-[0-9]{3}/;
         re.test(zip.value) ? clearError(zip) : showError(zip, formErrors.zipCode);
     }
+
+    fullName.addEventListener('change', checkFullName);
+    phoneNumber.addEventListener('change', checkPhoneNumber);
+    email.addEventListener('change', checkEmail);
+    city.addEventListener('change', checkCity);
+    zip.addEventListener('change', checkZip);
 
     button.addEventListener('click', event => {
         $mistakes = 0;
