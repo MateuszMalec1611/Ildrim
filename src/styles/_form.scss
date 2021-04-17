@@ -50,6 +50,7 @@
             color: $font-color;
             font-size: $sizeXS;
             border: none;
+            border-radius: unset;
             border-bottom: .1rem solid $font-color;
             outline: none;
         }
@@ -91,12 +92,14 @@
 
     &__box-appt-container {
         display: flex;
+       
         justify-content: center;
 
         @include media-tablet {
             margin-left: 3rem;
             justify-content: flex-start;
         }
+
 
         &-text {
             display: flex;
@@ -108,7 +111,7 @@
             overflow: unset;
             position: relative;
             margin: 1.5rem 2rem 0 1rem;
-            background-color: transparent;
+            background-color: red;
             border: none;
             color: #ffffff;
             font-size: $sizeExtraSmall;
