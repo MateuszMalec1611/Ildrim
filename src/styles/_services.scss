@@ -183,6 +183,10 @@
             font-size: 1.4rem;
         }
 
+        &-pagination {
+            z-index: -10 !important;
+        }
+
         &-prev,
         &-next {
             padding: .5rem 2rem;
