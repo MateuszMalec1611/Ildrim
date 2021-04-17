@@ -78,9 +78,7 @@
             }
 
             &::-webkit-scrollbar {
-                appearance: visible;
-                -webkit-appearance: visible;
-                display: inherit;
+                display: block;
                 width: .5rem;
                 background-color: rgba(255, 255, 255, 0.062);
             }

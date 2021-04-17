@@ -10,3 +10,4 @@ import './js/scroll-spy';
 import './js/animate';
 import './js/parallax';
 import './js/lozad';
+import './js/scroll';
