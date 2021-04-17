@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.css';
 export const mySwiper = new Swiper('.services__swiper-container', {
     // Optional parameters
     loop: true,
+    spaceBetween: 1,
 
     // Navigation arrows
     navigation: {
