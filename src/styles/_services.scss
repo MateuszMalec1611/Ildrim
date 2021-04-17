@@ -173,8 +173,11 @@
         }
 
         &-slide {
-            margin-top: 2rem;
             padding: 0 2rem;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 30rem;
+            height: 100%;
             line-height: 2.2rem;
             text-align: center;
             font-size: 1.4rem;
@@ -182,10 +185,10 @@
 
         &-prev,
         &-next {
+            padding: .5rem 2rem;
             position: absolute;
             left: 50%;
             top: 31rem !important;
-            z-index: 100;
         }
 
         &-pagination .swiper-pagination-bullet {
