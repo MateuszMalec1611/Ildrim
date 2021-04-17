@@ -111,16 +111,17 @@
             overflow: unset;
             position: relative;
             margin: 1.5rem 2rem 0 1rem;
-            background-color: red;
-            border: none;
-            color: #ffffff;
+            background-color: $font-color;
+            border-radius: 5%;
+            color: $background-color;
             font-size: $sizeExtraSmall;
+            border: none;
             width: 11rem;
             cursor: text;
             outline: transparent;
 
             &:focus {
-                color: #ffffff;
+                color: $background-color;
             }
 
             &--margin {
@@ -138,12 +139,9 @@
             &::-webkit-datetime-edit-hour-field,
             &::-webkit-datetime-edit-minute-field {
                 background-color: transparent;
-                border: 1px solid $font-color;
-                border-radius: 15%;
                 padding: 1.2rem 1rem;
-
                 &:focus {
-                    color: #ffffff;
+                    color: $background-color;
                 }
             }
 
@@ -157,12 +155,11 @@
                 position: absolute;
                 right: 2.5rem;
                 transform: scale(1.8);
-                filter: invert(100%) saturate(3207%) brightness(100%);
                 cursor: pointer;
 
                 @include media-tablet {
                     transform: scale(2.2);
-                    right: 3rem;
+                    right: 4rem;
                 }
             }
         }
