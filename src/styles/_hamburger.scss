@@ -5,7 +5,7 @@
     &__bars {
         position: relative;
         @include hamburger-bars;
-        transition: background-color .1s cubic-bezier(1,.01,1,.4);
+        transition: background-color .1s;
 
         &::before {
             top: .7rem;

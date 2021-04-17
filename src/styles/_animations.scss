@@ -1,18 +1,18 @@
 @keyframes bounce {
     0% {
-        transform: translateY(0) rotate(-20deg);
+        transform: translateY(0) rotate(-20deg) scale(1);
     }
 
     50% {
-        transform: translateY(30%) rotate(-20deg);
+        transform: translateY(30%) rotate(-20deg) scale(.8);
     }
 
     60% {
-        transform: translateY(30%) rotate(-20deg);
+        transform: translateY(30%) rotate(-20deg) scale(.8);
     }
 
     100% {
-        transform: translateY(0) rotate(-20deg);
+        transform: translateY(0) rotate(-20deg) scale(1);
     }
 }
 
