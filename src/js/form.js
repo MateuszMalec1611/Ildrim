@@ -56,11 +56,11 @@
         re.test(zip.value) ? clearError(zip) : showError(zip, formErrors.zipCode);
     }
 
-    fullName.addEventListener('change', checkFullName);
-    phoneNumber.addEventListener('change', checkPhoneNumber);
-    email.addEventListener('change', checkEmail);
-    city.addEventListener('change', checkCity);
-    zip.addEventListener('change', checkZip);
+    fullName.addEventListener('keyup', checkFullName);
+    phoneNumber.addEventListener('keyup', checkPhoneNumber);
+    email.addEventListener('keyup', checkEmail);
+    city.addEventListener('keyup', checkCity);
+    zip.addEventListener('keyup', checkZip);
 
     button.addEventListener('click', event => {
         $mistakes = 0;

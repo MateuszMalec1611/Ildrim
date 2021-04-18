@@ -5,6 +5,9 @@ export const mySwiper = new Swiper('.services__swiper-container', {
     // Optional parameters
     loop: true,
     spaceBetween: 1,
+    disableAutoResize: false,
+    centerInsufficientSlides: true,
+    centeredSlides: true,
 
     // Navigation arrows
     navigation: {
