@@ -13,7 +13,9 @@ import './js/lozad';
 
 
 window.onload = () => {
-    galleryTop.init();
-    mySwiper[0].init();
-    mySwiper[1].init();
+    setTimeout(() => { 
+        galleryTop.update();    
+        mySwiper[0].update();
+        mySwiper[1].update();
+    }, 100);
 }
