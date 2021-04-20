@@ -115,14 +115,19 @@
             }
         }
 
-        &-tap {
+        &-svg {
+            padding: 0 3rem 1.5rem 3rem;
             position: absolute;
-            bottom: 2rem;
-            right: -.5rem;
-            animation: moveTap 2s cubic-bezier(0.32, 2.13, 0.56, -0.77) infinite;
+            bottom: 0;
+            right: -1.5rem;
 
-            @include media-tablet {
-                right: -1rem;
+            &-text {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                text-align: center;
             }
         }
     }
@@ -168,7 +173,7 @@
 
         @include media-tablet {
             left: unset;
-            right: 4rem;
+            right: 8rem;
         }
 
         &:hover {
