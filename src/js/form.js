@@ -87,17 +87,17 @@
 
     // TEXT AREA STYLES SECTION
 
-    // const textAreaStyles = () => {
-    //     const textAreaLabel = textAreaInput.nextElementSibling;
+    const textAreaStyles = () => {
+        const textAreaLabel = textAreaInput.nextElementSibling;
 
-    //     if (textAreaInput.value !== '') {
-    //         textAreaLabel.classList.add('form__box-description--active');
-    //         textAreaInput.style.height = '12rem';
-    //     } else {
-    //         textAreaLabel.classList.remove('form__box-description--active');
-    //         textAreaInput.style.height = '4rem';
-    //     }
-    // }
+        if (textAreaInput.value !== '') {
+            textAreaLabel.classList.add('form__box-description--active');
+            textAreaInput.style.height = '12rem';
+        } else {
+            textAreaLabel.classList.remove('form__box-description--active');
+            textAreaInput.style.height = '4rem';
+        }
+    }
 
-    // textAreaInput.addEventListener('keyup', textAreaStyles);
+    textAreaInput.addEventListener('keyup', textAreaStyles);
 })();
