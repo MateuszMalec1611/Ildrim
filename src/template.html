@@ -42,22 +42,22 @@
     </header>
     <main>
         <section class="about-us scroll-fix" id="about-us">
-            <h2 class="section-header">O nas</h2>
+            <h2 class="section-header" data-aos="fade-up">O nas</h2>
             <div class="container">
 
                 <div class="about-us__box">
 
                     <div class="about-us__box-img-wrapper">
-                        <img class="about-us__box-img" src="./images/about-us-panele.jpg" alt="panele słoneczne">
+                        <img class="about-us__box-img lozad" data-src="./images/about-us-panele.jpg" alt="panele słoneczne" data-aos="fade-up" >
                     </div>
 
-                    <div class="about-us__box-text-container">
+                    <div class="about-us__box-text-container" data-aos="fade-up">
                         <p class="about-us__box-text">Jesteśmy prężnie rozwijającą się firmą, specjalizującą się w branży elektrycznej i fotowoltaicznej. Cechuje nas profesjonalne doradztwo techniczne. Do każdego klienta podchodzimy indywidualnie. Potrafimy słuchać i dopasować ofertę pod preferencje klienta. Zwykle proponujemy kilka rozwiązań, tak aby klient sam mógł zdecydować, co będzie dla niego korzystniejsze. Działamy kompleksowo. Najwyższa jakość oferowanych przez nas usług idzie w parze z atrakcyjnymi, konkurencyjnymi i możliwie niskimi cenami.
                             Posiadamy pełne zaplecze sprzętowe, działamy na najlepszych produktach i mamy zespół doświadczonych i przeszkolonych pracowników.
                             Swoją pracę wykonujemy bardzo starannie ze szczegółową uwagą, gdyż nasi pracownicy pracują w komfortowych warunkach bez nacisku na czas.
                         </p>
                     </div>
-                    <img class="about-us__box-tap" src="./images/tap.svg" alt="" height="38px" width="38px">
+                    <img class="about-us__box-tap" src="./images/mouse.svg" alt="" height="38px" width="38px">
                     <a href="#form"><button class="about-us__btn">Umów się na wycenę</button></a>
                 </div>
                 <!-- <img class="lightning-ico about-us__ico-one" src="./images/logoLightning.svg" width="120px" height="120px" alt="">
@@ -68,11 +68,11 @@
         </section>
 
         <section class="services scroll-fix" id="services">
-            <h2 class="section-header">Usługi</h2>
+            <h2 class="section-header" data-aos="fade-up">Usługi</h2>
             <div class="container">
                 <div class="services__box">
 
-                    <div class="services__card">
+                    <div class="services__card" data-aos="fade-up">
                         <div class="services__card-front">
                             <div class="services__card-front-shadow"></div>
                             <img class="services__card-img" src="./images/services/solar-system.jpg" alt="panele słoneczne na dachu">
@@ -124,7 +124,7 @@
                     </div>
                     <!--SERVICES CARD -->
 
-                    <div class="services__card">
+                    <div class="services__card" data-aos="fade-up">
                         <div class="services__card-front">
                             <div class="services__card-front-shadow"></div>
                             <img class="services__card-img" src="./images/services/electricity.jpg" alt="kable">
@@ -182,22 +182,22 @@
         </section>
 
         <section class="gallery scroll-fix" id="gallery">
-            <h2 class="section-header">Galeria</h2>
+            <h2 class="section-header" data-aos="fade-up">Galeria</h2>
 
-            <div class="gallery__swiper-container">
+            <div class="gallery__swiper-container" data-aos="fade-up">
 
                 <div class="swiper-wrapper">
                     <div class="swiper-slide gallery__swiper-slide">
-                        <img class="gallery__swiper-img" src="./images/gallery/gallery1.jpg" alt="zdjęcie z galeri">
+                        <img class="gallery__swiper-img lozad" data-src="./images/gallery/gallery1.jpg" alt="zdjęcie z galeri">
                     </div>
                     <div class="swiper-slide gallery__swiper-slide">
-                        <img class="gallery__swiper-img" src="./images/gallery/gallery2.jpg" alt="zdjęcie z galeri">
+                        <img class="gallery__swiper-img lozad" data-src="./images/gallery/gallery2.jpg" alt="zdjęcie z galeri">
                     </div>
                     <div class="swiper-slide gallery__swiper-slide">
-                        <img class="gallery__swiper-img" src="./images/gallery/gallery3.jpg" alt="zdjęcie z galeri">
+                        <img class="gallery__swiper-img lozad" data-src="./images/gallery/gallery3.jpg" alt="zdjęcie z galeri">
                     </div>
                     <div class="swiper-slide gallery__swiper-slide">
-                        <img class="gallery__swiper-img" src="./images/gallery/gallery4.jpg" alt="zdjęcie z galeri">
+                        <img class="gallery__swiper-img lozad" data-src="./images/gallery/gallery4.jpg" alt="zdjęcie z galeri">
                     </div>
                 </div>
                 <div class="swiper-button-prev swiper-button-white"></div>
@@ -214,8 +214,8 @@
                     <p class="section-header form__header">Wyceń swój projekt</p>
 
                     <div class="form__box-for-input">
-                        <input id="full-name" name="full-name" class="form__box-input" type="text" required>
-                        <label for="full-name" class="form__box-label">Imię i nazwisko</label>
+                        <input id="data" name="data" class="form__box-input" type="text" required>
+                        <label for="data" class="form__box-label">Imię i nazwisko</label>
                         <p class="form__box-error"></p>
                     </div>
 
@@ -226,7 +226,7 @@
                     </label>
 
                     <div class="form__box-for-input">
-                        <input id="email" name="emial" class="form__box-input" type="text" required>
+                        <input id="email" name="emial" class="form__box-input form__box-input-email" type="email" required>
                         <label for="email" class="form__box-label">Adres e-mail</label>
                         <p class="form__box-error"></p>
                     </div>

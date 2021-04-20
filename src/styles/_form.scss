@@ -61,6 +61,16 @@
             &:valid~.form__box-label {
                 @include activeLabel;
             }
+
+            &-email {
+
+                &[value=''],
+                &:not([value]) {
+                    ~.form__box-label {
+                        @include activeLabel;
+                    }
+                }
+            }
         }
 
         &-description {
@@ -92,7 +102,7 @@
 
     &__box-appt-container {
         display: flex;
-       
+
         justify-content: center;
 
         @include media-tablet {
@@ -138,6 +148,7 @@
             &::-webkit-datetime-edit-minute-field {
                 background-color: transparent;
                 padding: 1.2rem 1rem;
+
                 &:focus {
                     color: $background-color;
                 }

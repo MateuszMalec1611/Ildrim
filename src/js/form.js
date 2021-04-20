@@ -1,28 +1,47 @@
 (function form() {
-    const textAreaInput = document.querySelector('.form__box-description');
-    const fullName = document.querySelector('#full-name');
-    const phoneNumber = document.querySelector('#phone');
-    const email = document.querySelector('#email');
-    const city = document.querySelector('#city');
-    const zip = document.querySelector('#zip');
+    const inputs = document.querySelectorAll('.form__box-input');
     const button = document.querySelector('.form__button');
+    const textAreaInput = document.querySelector('.form__box-description');
     let $mistakes = 0;
+    let $notActive = true;
+
 
     const formErrors = {
         data: 'Wprowadź poprawne dane',
-        number: 'Wprowadź poprawny numer telefonu',
+        phone: 'Wprowadź poprawny numer telefonu',
         email: 'Wprowadź poprawny adres email',
         city: 'Wprowadź poprawną nazwę miasta',
-        zipCode: 'Wprowadź poprawny kod pocztowy'
+        zip: 'Wprowadź poprawny kod pocztowy'
     }
 
-    const showError = (element, text) => {
-        const formBox = element.parentElement;
+    const showError = (inputName, input) => {
+        const formBox = input.parentElement;
         const error = formBox.querySelector('.form__box-error');
-        error.style.display = 'block';
-        error.innerText = text;
+
         $mistakes++;
-        if($mistakes === 1) element.focus();
+        if ($mistakes === 1) input.focus();
+
+        switch (inputName) {
+            case 'data':
+                error.innerText = formErrors.data;
+                break;
+            case 'phone':
+                error.innerText = formErrors.phone;
+                break;
+            case 'email':
+                error.innerText = formErrors.email;
+                break;
+            case 'city':
+                error.innerText = formErrors.city;
+                break;
+            case 'zip':
+                error.innerText = formErrors.zip;
+                break;
+
+            default:
+                break;
+        }
+        error.style.display = 'block';
     }
 
     const clearError = element => {
@@ -31,59 +50,54 @@
         error.style.display = 'none';
     }
 
+    const checkInputs = () => {
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                const inputName = input.getAttribute('id');
+                showError(inputName, input);
+            }
+            if (input.checkValidity()) clearError(input);
+        });
+    }
+    const checkInput = element => {
+        const input = element.target;
 
-    const checkFullName = () => {
-        const re = /^([a-z]{2,3} [A-ZŁŻ][a-ząęóżźćńłś]{2,})|([A-ZŁŻ][a-ząęóżźćńłś]{2,})(-[A-ZŁŻ][a-ząęóżźćńłś]{2,})?$/;
-        re.test(fullName.value) ? clearError(fullName) : showError(fullName, formErrors.data);
+        if (!input.checkValidity()) {
+            const inputName = input.getAttribute('id');
+            showError(inputName, input);
+        }
+        if (input.checkValidity()) clearError(input);
     }
 
-    const checkPhoneNumber = () => {
-        const re = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
-        re.test(phoneNumber.value) ? clearError(phoneNumber) : showError(phoneNumber, formErrors.number);
+    const addListeners = () => {
+        inputs.forEach(input => {
+            const inputName = input.getAttribute('id');
+            const properInput = document.querySelector(`#${inputName}`);
+            properInput.addEventListener('input', checkInput);
+        });
     }
-
-    const checkEmail = () => {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        re.test(email.value) ? clearError(email) : showError(email, formErrors.email);
-    }
-
-    const checkCity = () => {
-        city.value.length >= 2 ? clearError(city) : showError(city, formErrors.city);
-    }
-
-    const checkZip = () => {
-        const re = /[0-9]{2}-[0-9]{3}/;
-        re.test(zip.value) ? clearError(zip) : showError(zip, formErrors.zipCode);
-    }
-
-    fullName.addEventListener('keyup', checkFullName);
-    phoneNumber.addEventListener('keyup', checkPhoneNumber);
-    email.addEventListener('keyup', checkEmail);
-    city.addEventListener('keyup', checkCity);
-    zip.addEventListener('keyup', checkZip);
 
     button.addEventListener('click', event => {
         $mistakes = 0;
-        checkFullName();
-        checkPhoneNumber();
-        checkEmail();
-        checkCity();
-        checkZip();
-
+        checkInputs();
+        if ($notActive) addListeners();
+        $notActive = false;
         if ($mistakes > 0) event.preventDefault();
     });
 
-    const textAreaStyles = () => {
-        const textAreaLabel = textAreaInput.nextElementSibling;
+    // TEXT AREA STYLES SECTION
 
-        if (textAreaInput.value !== '') {
-            textAreaLabel.classList.add('form__box-description--active');
-            textAreaInput.style.height = '12rem';
-        } else {
-            textAreaLabel.classList.remove('form__box-description--active');
-            textAreaInput.style.height = '4rem';
-        }
-    }
+    // const textAreaStyles = () => {
+    //     const textAreaLabel = textAreaInput.nextElementSibling;
 
-    textAreaInput.addEventListener('keyup', textAreaStyles);
+    //     if (textAreaInput.value !== '') {
+    //         textAreaLabel.classList.add('form__box-description--active');
+    //         textAreaInput.style.height = '12rem';
+    //     } else {
+    //         textAreaLabel.classList.remove('form__box-description--active');
+    //         textAreaInput.style.height = '4rem';
+    //     }
+    // }
+
+    // textAreaInput.addEventListener('keyup', textAreaStyles);
 })();

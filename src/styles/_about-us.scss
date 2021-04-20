@@ -88,11 +88,11 @@
                 outline: 1px solid slategrey;
             }
 
-            
+
             &:hover::-webkit-scrollbar {
                 width: .5rem;
             }
-            
+
         }
 
         &-text {
@@ -117,9 +117,13 @@
 
         &-tap {
             position: absolute;
-            bottom: 3.2rem;
-            right: -1.7rem;
-            animation: moveTap 2s ease-out infinite;
+            bottom: 2rem;
+            right: -.5rem;
+            animation: moveTap 2s cubic-bezier(0.32, 2.13, 0.56, -0.77) infinite;
+
+            @include media-tablet {
+                right: -1rem;
+            }
         }
     }
 

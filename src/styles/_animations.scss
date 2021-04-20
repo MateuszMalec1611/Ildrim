@@ -18,18 +18,18 @@
 
 @keyframes moveTap {
     0% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
     50% {
-        transform: translateY(55%);
+        transform: translateX(15%);
     }
 
     54% {
-        transform: translateY(55%);
+        transform: translateX(15%);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
