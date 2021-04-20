@@ -2,7 +2,7 @@
 import './styles/index.scss'
 
 // JS files
-import { galleryTop, mySwiper } from './js/swiper';
+import { gallery, swiperCards } from './js/swiper';
 import './js/navigation';
 import './js/footer';
 import './js/form';
@@ -14,8 +14,8 @@ import './js/lozad';
 
 window.onload = () => {
     setTimeout(() => { 
-        galleryTop.update();    
-        mySwiper[0].update();
-        mySwiper[1].update();
+        gallery.update();    
+        swiperCards[0].update();
+        swiperCards[1].update();
     }, 100);
 }
