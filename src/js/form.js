@@ -99,5 +99,5 @@
         }
     }
 
-    textAreaInput.addEventListener('keyup', textAreaStyles);
+    textAreaInput.addEventListener('input', textAreaStyles);
 })();
