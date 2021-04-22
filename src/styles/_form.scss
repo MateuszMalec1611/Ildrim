@@ -33,10 +33,9 @@
         }
 
         &-label {
+            @include activeLabel;
             position: absolute;
-            top: 3rem;
             left: 0;
-            font-size: $extraSize;
             transition: top .3s, font-size .3s, color .3s;
             z-index: -1;
         }
@@ -55,22 +54,17 @@
             outline: none;
         }
 
-        &-input {
+        input {
+            
+            &.empty~.form__box-label {
+                top: 3rem;
+                font-size: $extraSize;
+            }
 
-            &:focus~.form__box-label,
-            &:valid~.form__box-label {
+            &:focus~.form__box-label {
                 @include activeLabel;
             }
 
-            &-email {
-
-                &[value=''],
-                &:not([value]) {
-                    ~.form__box-label {
-                        @include activeLabel;
-                    }
-                }
-            }
         }
 
         &-description {

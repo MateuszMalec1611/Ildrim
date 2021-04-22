@@ -3,7 +3,7 @@
     const button = document.querySelector('.form__button');
     const textAreaInput = document.querySelector('.form__box-description');
     let $mistakes = 0;
-    let $notActive = true;
+    let $validate = false;
 
 
     const formErrors = {
@@ -59,29 +59,32 @@
             if (input.checkValidity()) clearError(input);
         });
     }
+
+    const checkInputForValue = input => input.value.length ? input.classList.remove('empty') : input.classList.add('empty');
+    
     const checkInput = element => {
         const input = element.target;
 
-        if (!input.checkValidity()) {
+        checkInputForValue(input);
+
+        if (!input.checkValidity() && $validate) {
             const inputName = input.getAttribute('id');
             showError(inputName, input);
         }
-        if (input.checkValidity()) clearError(input);
+        if (input.checkValidity() && $validate) clearError(input);
     }
 
-    const addListeners = () => {
-        inputs.forEach(input => {
-            const inputName = input.getAttribute('id');
-            const properInput = document.querySelector(`#${inputName}`);
-            properInput.addEventListener('input', checkInput);
-        });
-    }
+    inputs.forEach(input => {
+        const inputName = input.getAttribute('id');
+        const properInput = document.querySelector(`#${inputName}`);
+        checkInputForValue(properInput);
+        properInput.addEventListener('input', checkInput);
+    });
 
     button.addEventListener('click', event => {
         $mistakes = 0;
         checkInputs();
-        if ($notActive) addListeners();
-        $notActive = false;
+        $validate = true;
         if ($mistakes > 0) event.preventDefault();
     });
 
