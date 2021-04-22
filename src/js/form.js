@@ -1,7 +1,7 @@
 (function form() {
     const inputs = document.querySelectorAll('.form__box-input');
     const button = document.querySelector('.form__button');
-    const textAreaInput = document.querySelector('.form__box-description');
+    const checkBox = document.querySelector('.form__checkbox-check');
     let $mistakes = 0;
     let $validate = false;
 
@@ -52,6 +52,8 @@
 
     const checkInputs = () => {
         inputs.forEach(input => {
+            if (input.classList.contains('form__box-description')) return;
+
             if (!input.checkValidity()) {
                 const inputName = input.getAttribute('id');
                 showError(inputName, input);
@@ -61,17 +63,24 @@
     }
 
     const checkInputForValue = input => input.value.length ? input.classList.remove('empty') : input.classList.add('empty');
-    
+
     const checkInput = element => {
         const input = element.target;
 
         checkInputForValue(input);
+        if (input.classList.contains('form__box-description')) return;
 
         if (!input.checkValidity() && $validate) {
             const inputName = input.getAttribute('id');
             showError(inputName, input);
         }
         if (input.checkValidity() && $validate) clearError(input);
+    }
+
+    const checkBoxCheck = () => {
+        checkBox.checked ?
+            checkBox.nextElementSibling.classList.remove('notChecked') :
+            checkBox.nextElementSibling.classList.add('notChecked');
     }
 
     inputs.forEach(input => {
@@ -84,23 +93,8 @@
     button.addEventListener('click', event => {
         $mistakes = 0;
         checkInputs();
+        checkBoxCheck();
         $validate = true;
         if ($mistakes > 0) event.preventDefault();
     });
-
-    // TEXT AREA STYLES SECTION
-
-    const textAreaStyles = () => {
-        const textAreaLabel = textAreaInput.nextElementSibling;
-
-        if (textAreaInput.value !== '') {
-            textAreaLabel.classList.add('form__box-description--active');
-            textAreaInput.style.height = '12rem';
-        } else {
-            textAreaLabel.classList.remove('form__box-description--active');
-            textAreaInput.style.height = '4rem';
-        }
-    }
-
-    textAreaInput.addEventListener('input', textAreaStyles);
 })();

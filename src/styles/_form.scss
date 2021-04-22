@@ -54,11 +54,13 @@
             outline: none;
         }
 
-        input {
-            
+        input,
+        &-description {
+
             &.empty~.form__box-label {
                 top: 3rem;
                 font-size: $extraSize;
+                color: $font-color;
             }
 
             &:focus~.form__box-label {
@@ -68,17 +70,15 @@
         }
 
         &-description {
+            margin-top: .2rem;
             max-width: 100%;
             min-width: 100%;
+            height: 14rem;
             font-family: $font-family;
             transition: height .3s;
 
-            &--active {
-                @include activeLabel;
-            }
-
-            &:focus~.form__box-label {
-                @include activeLabel;
+            &.empty {
+                height: 4rem;
             }
         }
 
@@ -220,6 +220,10 @@
             border-radius: 5px;
             border: 2px solid $font-color;
             transition: all .3s ease-out;
+
+            &.notChecked {
+                border: 2px solid $red-color;
+            }
 
             &::after {
                 position: absolute;
