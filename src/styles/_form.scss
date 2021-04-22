@@ -33,10 +33,9 @@
         }
 
         &-label {
+            @include activeLabel;
             position: absolute;
-            top: 3rem;
             left: 0;
-            font-size: $extraSize;
             transition: top .3s, font-size .3s, color .3s;
             z-index: -1;
         }
@@ -55,36 +54,31 @@
             outline: none;
         }
 
-        &-input {
-
-            &:focus~.form__box-label,
-            &:valid~.form__box-label {
-                @include activeLabel;
-            }
-
-            &-email {
-
-                &[value=''],
-                &:not([value]) {
-                    ~.form__box-label {
-                        @include activeLabel;
-                    }
-                }
-            }
-        }
-
+        input,
         &-description {
-            max-width: 100%;
-            min-width: 100%;
-            font-family: $font-family;
-            transition: height .3s;
 
-            &--active {
-                @include activeLabel;
+            &.empty~.form__box-label {
+                top: 3rem;
+                font-size: $extraSize;
+                color: $font-color;
             }
 
             &:focus~.form__box-label {
                 @include activeLabel;
+            }
+
+        }
+
+        &-description {
+            margin-top: .2rem;
+            max-width: 100%;
+            min-width: 100%;
+            height: 14rem;
+            font-family: $font-family;
+            transition: height .3s;
+
+            &.empty {
+                height: 4rem;
             }
         }
 
@@ -226,6 +220,10 @@
             border-radius: 5px;
             border: 2px solid $font-color;
             transition: all .3s ease-out;
+
+            &.notChecked {
+                border: 2px solid $red-color;
+            }
 
             &::after {
                 position: absolute;
