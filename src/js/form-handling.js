@@ -23,7 +23,7 @@
         body: new URLSearchParams(data).toString()
       })
         .then(() => {
-          message.innerHTML = `<p class="form__message-success">Dziękujemy, twój e-mail został pomyślnie wysłany.</p>`;
+          message.innerHTML = `<p class="form__message-success">Dziękujemy, Twoja wiadomość została wysłana pomyślnie.</p>`;
           emailForm.reset();
           button.classList.remove('hidden');
           loader.classList.remove('visible');
