@@ -19,6 +19,7 @@ export const swiperCards = new Swiper('.services__swiper-container', {
 
 
 export const gallery = new Swiper('.gallery__swiper-container', {
+    loop: true,
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
