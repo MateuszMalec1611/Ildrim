@@ -4,3 +4,5 @@ Crawl-delay: 2
 
 User-agent: *
 Allow: /
+Sitemap: https://ildirim.pl/sitemap.xml
+Host: https://ildirim.pl
