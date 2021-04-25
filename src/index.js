@@ -3,6 +3,7 @@ import './styles/index.scss'
 
 // JS files
 import { gallery, swiperCards } from './js/swiper';
+import AOS from 'aos';
 import './js/navigation';
 import './js/footer';
 import './js/form';
@@ -19,4 +20,6 @@ window.onload = () => {
         swiperCards[0].update();
         swiperCards[1].update();
     }, 100);
+
+    AOS.refreshHard();
 }
