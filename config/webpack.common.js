@@ -90,8 +90,8 @@ module.exports = {
         // Feel free to experiment with options for better result for you
         plugins: [
           ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-          ['mozjpeg', { quality: 50 }],
+          ['optipng', { optimizationLevel: 1 }],
+          ['mozjpeg', { quality: 80 }],
           ['imagemin-webp'],
         ],
       },
