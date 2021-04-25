@@ -2,8 +2,8 @@ const paths = require('./paths')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 const options = {
   policy: [
@@ -17,8 +17,8 @@ const options = {
       allow: "/",
     },
   ],
-  sitemap: "",
-  host: "",
+  sitemap: "https://ildirim.pl/sitemap.xml",
+  host: "https://ildirim.pl/",
 };
 
 
@@ -32,59 +32,6 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: '/',
   },
-
-  // Customize the webpack build process
-  plugins: [
-    // Removes/cleans build folders and unused assets when rebuilding
-    new CleanWebpackPlugin(),
-
-    new ImageMinimizerPlugin({
-      test: /\.(jpe?g|png)$/i,
-      minimizerOptions: {
-        // Lossless optimization with custom option
-        // Feel free to experiment with options for better result for you
-        plugins: [
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-          ['mozjpeg', { quality: 90 }],
-          ['imagemin-webp'],
-        ],
-      },
-      deleteOriginalAssets: true,
-    }),
-
-    // Copies files from target to destination folder
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: `${paths.src}/images`,
-          to: 'images',
-          globOptions: {
-            ignore: ['*.DS_Store'],
-          },
-          noErrorOnMissing: true,
-        },
-        {
-          from: `${paths.public}`,
-          to: '',
-          globOptions: {
-            ignore: ['.*'],
-          },
-        },
-      ],
-    }),
-
-    // Generates an HTML file from a template
-    // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
-    new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
-      favicon: paths.src + '/images/favicon.jpg',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
-    }),
-
-    new RobotstxtPlugin(options)
-  ],
 
   // Determine how modules within the project are treated
   module: {
@@ -117,4 +64,49 @@ module.exports = {
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ],
   },
+  // Customize the webpack build process
+  plugins: [
+    // Removes/cleans build folders and unused assets when rebuilding
+    new CleanWebpackPlugin(),
+
+    // Copies files from target to destination folder
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${paths.src}/images`,
+          to: `${paths.build}/images/`,
+          globOptions: {
+            ignore: ['*.DS_Store'],
+          },
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
+
+    new ImageMinimizerPlugin({
+      test: /\.(jpe?g|png)$/i,
+      minimizerOptions: {
+        // Lossless optimization with custom option
+        // Feel free to experiment with options for better result for you
+        plugins: [
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          ['mozjpeg', { quality: 50 }],
+          ['imagemin-webp'],
+        ],
+      },
+      deleteOriginalAssets: true,
+    }),
+
+    // Generates an HTML file from a template
+    // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
+    new HtmlWebpackPlugin({
+      title: 'webpack Boilerplate',
+      favicon: paths.src + '/images/favicon.jpg',
+      template: paths.src + '/template.html', // template file
+      filename: 'index.html', // output file
+    }),
+
+    new RobotstxtPlugin(options)
+  ],
 }
