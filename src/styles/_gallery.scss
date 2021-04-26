@@ -28,20 +28,4 @@
         }
 
     }
-
-    &__ico-one {
-        left: -1%;
-        top: 36%;
-        transform: rotate(-61deg);
-
-        @include media-desktop {
-            left: 1%;
-        }
-    }
-
-    &__ico-two {
-        left: 86.5%;
-        top: 16%;
-        transform: rotate(-1deg);
-    }
 }

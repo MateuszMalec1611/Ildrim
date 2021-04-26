@@ -133,36 +133,6 @@
         }
     }
 
-    &__ico {
-        display: none;
-
-        &-one {
-            left: 4%;
-            top: -30%;
-            transform: rotate(-59deg);
-
-            @include media-desktop {
-                top: -26%;
-            }
-        }
-
-        &-two {
-            left: 54%;
-            top: 93%;
-            transform: rotate(-38deg);
-        }
-
-        &-three {
-            left: 86%;
-            top: -22%;
-            transform: rotate(9deg);
-
-            @include media-desktop {
-                top: -16%;
-            }
-        }
-    }
-
     &__btn {
         padding: 1.4rem 3rem;
         position: absolute;

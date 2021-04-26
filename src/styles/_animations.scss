@@ -16,24 +16,6 @@
   }
 }
 
-@keyframes moveTap {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(15%);
-  }
-
-  54% {
-    transform: translateX(15%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 @keyframes scroll {
   0% {
     transform: translateY(0);
