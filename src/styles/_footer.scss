@@ -34,10 +34,8 @@
         display: flex;
         align-items: center;
         font-size: $sizeExtraSmall;
-        color: $background-color;
+        color: inherit !important;
         
-       
-
         &-contact {
             margin-top: 1rem;
             transition: transform .3s;
@@ -45,6 +43,11 @@
             &:hover {
                 transform: scale(1.04);
             }
+        }
+
+        &-nip {
+            color: inherit;
+            text-decoration: inherit;
         }
     }
 

@@ -33,10 +33,9 @@
         }
 
         &-label {
+            @include activeLabel;
             position: absolute;
-            top: 3rem;
             left: 0;
-            font-size: $extraSize;
             transition: top .3s, font-size .3s, color .3s;
             z-index: -1;
         }
@@ -50,30 +49,36 @@
             color: $font-color;
             font-size: $sizeXS;
             border: none;
+            border-radius: unset;
             border-bottom: .1rem solid $font-color;
             outline: none;
         }
 
-        &-input {
-
-            &:focus~.form__box-label,
-            &:valid~.form__box-label {
-                @include activeLabel;
-            }
-        }
-
+        input,
         &-description {
-            max-width: 100%;
-            min-width: 100%;
-            font-family: $font-family;
-            transition: height .3s;
 
-            &--active {
-                @include activeLabel;
+            &.empty~.form__box-label {
+                top: 3rem;
+                font-size: $extraSize;
+                color: $font-color;
             }
 
             &:focus~.form__box-label {
                 @include activeLabel;
+            }
+
+        }
+
+        &-description {
+            margin-top: .2rem;
+            max-width: 100%;
+            min-width: 100%;
+            height: 14rem;
+            font-family: $font-family;
+            transition: height .3s;
+
+            &.empty {
+                height: 4rem;
             }
         }
 
@@ -91,12 +96,14 @@
 
     &__box-appt-container {
         display: flex;
+
         justify-content: center;
 
         @include media-tablet {
             margin-left: 3rem;
             justify-content: flex-start;
         }
+
 
         &-text {
             display: flex;
@@ -105,19 +112,18 @@
         }
 
         &-time {
-            overflow: unset;
             position: relative;
             margin: 1.5rem 2rem 0 1rem;
-            background-color: transparent;
-            border: none;
-            color: #ffffff;
+            background-color: $font-color;
+            color: $background-color;
             font-size: $sizeExtraSmall;
-            width: 11rem;
+            border: none;
+            width: 11.3rem;
             cursor: text;
             outline: transparent;
 
             &:focus {
-                color: #ffffff;
+                color: $background-color;
             }
 
             &--margin {
@@ -135,12 +141,10 @@
             &::-webkit-datetime-edit-hour-field,
             &::-webkit-datetime-edit-minute-field {
                 background-color: transparent;
-                border: 1px solid $font-color;
-                border-radius: 15%;
                 padding: 1.2rem 1rem;
 
                 &:focus {
-                    color: #ffffff;
+                    color: $background-color;
                 }
             }
 
@@ -152,14 +156,13 @@
             &::-webkit-calendar-picker-indicator {
                 padding-left: 6rem;
                 position: absolute;
-                right: 2.5rem;
+                right: 3rem;
                 transform: scale(1.8);
-                filter: invert(100%) saturate(3207%) brightness(100%);
                 cursor: pointer;
 
                 @include media-tablet {
-                    transform: scale(2.2);
-                    right: 3rem;
+                    transform: scale(2);
+                    right: 3.6rem;
                 }
             }
         }
@@ -217,6 +220,10 @@
             border-radius: 5px;
             border: 2px solid $font-color;
             transition: all .3s ease-out;
+
+            &.notChecked {
+                border: 2px solid $red-color;
+            }
 
             &::after {
                 position: absolute;

@@ -1,10 +1,9 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
-export const mySwiper = new Swiper('.services__swiper-container', {
+export const swiperCards = new Swiper('.services__swiper-container', {
     // Optional parameters
     loop: true,
-
     // Navigation arrows
     navigation: {
         nextEl: '.services__swiper-next',
@@ -19,11 +18,17 @@ export const mySwiper = new Swiper('.services__swiper-container', {
 });
 
 
-export const galleryTop = new Swiper('.gallery__swiper-container', {
+export const gallery = new Swiper('.gallery__swiper-container', {
+    loop: true,
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 'auto',
+    lazy: true,
+    lazy: {
+        loadPrevNext: true,
+      },
+    watchSlidesVisibility: true,
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -34,5 +39,9 @@ export const galleryTop = new Swiper('.gallery__swiper-container', {
     pagination: {
         el: '.swiper-pagination',
     },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 });
 
