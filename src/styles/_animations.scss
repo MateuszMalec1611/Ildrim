@@ -1,82 +1,45 @@
 @keyframes bounce {
-<<<<<<< HEAD
   0% {
-    transform: translateY(0) rotate(-20deg);
-  }
-
-  25% {
-    transform: translateY(30%) rotate(-20deg) scale(0.85);
-  }
-
-  60% {
-    transform: translateY(30%) rotate(-20deg) scale(0.85);
-  }
-
-  100% {
-    transform: translateY(0) rotate(-20deg);
-  }
-}
-
-@keyframes moveTap {
-  0% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-20deg) scale(1);
   }
 
   50% {
-    transform: translateY(55%);
+    transform: translateY(30%) rotate(-20deg) scale(0.8);
   }
 
-  54% {
-    transform: translateY(55%);
+  60% {
+    transform: translateY(30%) rotate(-20deg) scale(0.8);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-20deg) scale(1);
   }
-}
-=======
-    0% {
-        transform: translateY(0) rotate(-20deg) scale(1);
-    }
-
-    50% {
-        transform: translateY(30%) rotate(-20deg) scale(.8);
-    }
-
-    60% {
-        transform: translateY(30%) rotate(-20deg) scale(.8);
-    }
-
-    100% {
-        transform: translateY(0) rotate(-20deg) scale(1);
-    }
 }
 
 @keyframes moveTap {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    50% {
-        transform: translateX(15%);
-    }
+  50% {
+    transform: translateX(15%);
+  }
 
-    54% {
-        transform: translateX(15%);
-    }
+  54% {
+    transform: translateX(15%);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 
-    30% {
-        transform: translateY(60px);
-    }
+  30% {
+    transform: translateY(60px);
+  }
 }
->>>>>>> 159ed022a73452a4d9e16c125e68f2081eb55d82
