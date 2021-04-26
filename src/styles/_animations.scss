@@ -1,45 +1,45 @@
 @keyframes bounce {
-    0% {
-        transform: translateY(0) rotate(-20deg) scale(1);
-    }
+  0% {
+    transform: translateY(0) rotate(-20deg) scale(1);
+  }
 
-    50% {
-        transform: translateY(30%) rotate(-20deg) scale(.8);
-    }
+  50% {
+    transform: translateY(30%) rotate(-20deg) scale(0.8);
+  }
 
-    60% {
-        transform: translateY(30%) rotate(-20deg) scale(.8);
-    }
+  60% {
+    transform: translateY(30%) rotate(-20deg) scale(0.8);
+  }
 
-    100% {
-        transform: translateY(0) rotate(-20deg) scale(1);
-    }
+  100% {
+    transform: translateY(0) rotate(-20deg) scale(1);
+  }
 }
 
 @keyframes moveTap {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    50% {
-        transform: translateX(15%);
-    }
+  50% {
+    transform: translateX(15%);
+  }
 
-    54% {
-        transform: translateX(15%);
-    }
+  54% {
+    transform: translateX(15%);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 
-    30% {
-        transform: translateY(60px);
-    }
+  30% {
+    transform: translateY(60px);
+  }
 }

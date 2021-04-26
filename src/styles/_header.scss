@@ -1,42 +1,41 @@
 .header {
+  &__img {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/header-small.jpg");
+    background-size: cover;
+    z-index: 0;
 
-    &__img {
-        position: relative;
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background-image: url('../images/header-small.jpg');
-        background-size: cover;
-        z-index: 0;
-        
-        @include media-tablet {
-            background-image: url('../images/header-big.jpg');
-            background-position: center;
-        }
-
-        &-bg {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, .6);
-            z-index: -10;
-        }
+    @include media-tablet {
+      background-image: url("../images/header-big.jpg");
+      background-position: center;
     }
 
-    &__logo {
-        margin-bottom: 18rem;
-        width: 30rem;
-
-        @include media-tablet {
-            margin-bottom: unset;
-            transform: scale(1.8);
-        }
+    &-bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -10;
     }
+  }
 
-    &__arrow {
-        position: absolute;
-        bottom: 1rem;
-        animation: bounce 2s infinite;
+  &__logo {
+    margin-bottom: 18rem;
+    width: 30rem;
+
+    @include media-tablet {
+      margin-bottom: unset;
+      transform: scale(1.8);
     }
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 1rem;
+    animation: bounce 2s infinite;
+  }
 }
